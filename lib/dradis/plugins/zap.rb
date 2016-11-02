@@ -6,6 +6,6 @@ module Dradis
 end
 
 require 'dradis/plugins/zap/engine'
-# require 'dradis/plugins/zap/field_processor'
-# require 'dradis/plugins/zap/importer'
+require 'dradis/plugins/zap/field_processor'
+require 'dradis/plugins/zap/importer'
 require 'dradis/plugins/zap/version'
