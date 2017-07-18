@@ -14,7 +14,7 @@ class ZapTasks < Thor
 
     detect_and_set_project_scope
 
-    importer = Dradis::Plugins::Zap::Importer.new(logger: logger)
+    importer = Dradis::Plugins::Zap::Importer.new(task_options)
     importer.import(file: file_path)
   end
 end
