@@ -49,14 +49,14 @@ module Dradis::Plugins::Zap
       plugin_id = xml_alert_item.at_xpath('./pluginid').text()
       logger.info{ "\t\t => Creating new issue (plugin_id: #{plugin_id})" }
 
-      issue_text = template_service.process_template(template: 'issue', data: xml_alert_item)
+      issue_text = mapping_service.apply_mapping(source: 'issue', data: xml_alert_item)
       issue = content_service.create_issue(text: issue_text, id: plugin_id)
 
 
       xml_alert_item.xpath('./instances/instance').each do |xml_instance|
         logger.info{ "\t\t => Creating new evidence" }
 
-        evidence_content = template_service.process_template(template: 'evidence', data: xml_instance)
+        evidence_content = mapping_service.apply_mapping(source: 'evidence', data: xml_instance)
         content_service.create_evidence(issue: issue, node: site_node, content: evidence_content)
       end
     end
