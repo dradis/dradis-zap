@@ -14,5 +14,27 @@ module Dradis::Plugins::Zap
         'References' => "{{ zap[issue.reference] }}\nCWE: {{ zap[issue.cweid] }}\nWASC: {{ zap[issue.wascid] }}"
       }
     }.freeze
+
+    SOURCE_FIELDS = {
+      evidence: [
+        'evidence.uri',
+        'evidence.param',
+        'evidence.attack'
+      ],
+      issue: [
+        'issue.pluginid',
+        'issue.alert',
+        'issue.riskcode',
+        'issue.confidence',
+        'issue.riskdesc',
+        'issue.desc',
+        'issue.count',
+        'issue.solution',
+        'issue.otherinfo',
+        'issue.reference',
+        'issue.cweid',
+        'issue.wascid'
+      ]
+    }.freeze
   end
 end
