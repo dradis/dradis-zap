@@ -1,6 +1,6 @@
-v4.12.0 (Mmmm 2024)
- - Migrate integration to use Mappings Manager
+v4.12.0 (May 2024)
  - Update Dradis links in README
+ - Migrate integration to use Mappings Manager
 
 v4.11.0 (January 2024)
   - No changes
